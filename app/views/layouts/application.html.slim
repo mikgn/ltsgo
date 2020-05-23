@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title = content_for?(:title) ? yield(:title) : "Bbq"
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'check.png', rel: 'shortcut icon'
+  body
+    nav.navbar.navbar-expand-lg.navbar-light.bg-light
+      = link_to 'BBQ', root_path, class: "navbar-brand"
+      button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbarNav
+        ul.navbar-nav
+          li.nav-item.active
+            = link_to 'Home', root_path, class: "nav-link"
+          li.nav-item
+            = link_to 'Home', root_path, class: "nav-link"
+          li.nav-item
+            = link_to 'Home', root_path, class: "nav-link"
+
+    .container
+      .row
+        .col-lg-9
+          = yield
+        .col-lg-3
+          .well.sidebar-nav
+            h3 Sidebar
+            ul.nav.nav-list
+              li.nav-header Sidebar
+              li = link_to "Link1", "/path1"
+              li = link_to "Link2", "/path2"
+              li = link_to "Link3", "/path3"
+
+      footer
+        p &copy; Company 2020
