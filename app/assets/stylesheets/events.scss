@@ -6,7 +6,6 @@
 }
 
 .event-background {
-  background-image: url('../images/event_thumb.jpg');
   width: 100%;
   z-index: -1;
 
@@ -23,15 +22,15 @@
   //-ms-filter: blur(5px);
 }
 
-//.event-background {
-//  background-image: url('../images/event_thumb.jpg');
-//}
-//
-//.event-background-show {
-//  background-image: url('../images/event.jpg');
-//}
+.event-background {
+  background-image: url('event_thumb.jpg');
+}
 
-.event-description * {
+.event-background-show {
+  background-image: url('event.jpg');
+}
+
+.event-description {
   color: white;
 }
 
@@ -44,11 +43,15 @@
 }
 
 .event-info-inner {
-  background:rgba(0, 0, 0, 0.4);
+  padding: 20px;
 }
 
 .event-map {
   margin: 20px 0;
   width: 100%;
   height: 400px;
+}
+
+#flatpickr {
+  background-color: #fff;
 }

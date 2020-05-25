@@ -1,22 +1,14 @@
 = form_with(model: event, local: true) do |form|
-  - if event.errors.any?
-    #error_explanation
-      h2 "#{pluralize(event.errors.count, "error")}" prohibited this event from being saved:
-      ul
-        - event.errors.full_messages.each do |message|
-          li = message
+  = render partial: 'partials/form_errors', locals: { model: @event }
   .form-group
-    = form.label :title
-    = form.text_field :title, class: 'form-control'
+    = form.text_field :title, class: 'form-control', placeholder: 'Title'
   .form-group
-    = form.label :address
-    = form.text_field :address, class: 'form-control'
+    = form.text_field :datetime, class: 'form-control', id: 'flatpickr',
+                                 placeholder: 'Date and Time', autocomplete: "off"
   .form-group
-    = form.label :datetime
-    = form.text_field :datetime, class: 'form-control'
+    = form.text_field :address, class: 'form-control', placeholder: 'Address'
   .form-group
-    = form.label :description
-    = form.text_field :description , class: 'form-control'
+    = form.text_area :description, class: 'form-control', rows: '4', placeholder: 'Description'
   .actions
     = form.submit 'Save', class: 'btn btn-primary'
     = link_to 'Back', :back
