@@ -16,13 +16,12 @@
   background-position: center;
 }
 
-.event-background {
-  background-image: url('7.jpg');
+.event-background, .event-background-show {
+  background-image: image-url('back.jpg');
 }
 
 .event-background-show {
   padding: 0 20px;
-  background-image: url('7.jpg');
 }
 
 .event-description {
