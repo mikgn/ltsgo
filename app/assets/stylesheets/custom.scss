@@ -1,3 +1,9 @@
+.form-border {
+  padding: 20px 40px;
+  border: 1px solid #20272B;
+  border-radius: 3px;
+}
+
 .logo-text {
   font-weight: 800;
   font-size: 34px;
@@ -10,6 +16,10 @@
 
 .create-event-btn a {
   font-weight: bold;
+}
+
+.full-screen-height {
+  height: 100vh;
 }
 
 .session-btns {
@@ -87,4 +97,60 @@
 
 .alert-text-color {
   color: #C82232;
+}
+
+// footer
+
+footer {
+  padding: 5px 0;
+  background-color: #000;
+  bottom:0;
+  width: 100%;
+}
+
+footer a {
+  width: 25px;
+  height: 25px;
+  margin: 0 7px;
+  padding: 0 !important;
+}
+
+footer i {
+  color: #fff;
+}
+
+footer img {
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 0 5px 3px 5px;
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle at center, white 60%, transparent 61%);
+  overflow: hidden;
+}
+
+.copyright {
+  margin-left: 20px;
+  font-size: 16px;
+  color: #fff;
+}
+
+@media screen and (max-width: 450px) {
+  .copyright {
+    margin-top: 20px;
+    display: block;
+  }
+}
+
+// from buttons
+
+@media screen and (max-width: 450px) {
+  .forgot-btn {
+    margin-left: 0 !important;
+    margin-top: 20px;
+  }
+
+  .send-instructions {
+    margin-bottom: 10px;
+  }
 }

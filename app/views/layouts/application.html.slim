@@ -30,3 +30,16 @@ html
         .col-lg-12
           p#notice = notice
           = yield
+
+    footer.page-footer.mt-5
+      .text-center.py-3
+        = mail_to 'kogan.miha@gmail.com', class: "btn btn-sm"
+          i.far.fa-envelope.fa-2x
+        = link_to "tel:#{+528661405685}", class: "btn btn-sm"
+          i.fas.fa-phone-square.fa-2x
+        = link_to 'https://github.com/mikgn', class: "btn btn-sm"
+          i.fab.fa-github-square.fa-2x
+        = link_to 'https://www.linkedin.com/in/michamichael/', class: "btn btn-sm"
+          i.fab.fa-linkedin.fa-2x
+
+        span.copyright  © 2020 Copyright: Michael Kogan

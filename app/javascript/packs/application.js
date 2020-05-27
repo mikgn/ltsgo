@@ -8,7 +8,8 @@ import "turbolinks"
 import "@rails/activestorage"
 import "channels"
 import "jquery"
-import "flatpickr";
+import "flatpickr"
+import "@fortawesome/fontawesome-free/css/all.css"
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
@@ -19,7 +20,8 @@ $(document).ready(function(){
         enableTime: true,
         minDate: "today",
         dateFormat: "j/n/Y H:i",
-        allowInput: false
+        allowInput: false,
+        appearence: 'top'
     });
 });
 

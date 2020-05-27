@@ -19,8 +19,8 @@ puts "Created 3 Users"
     user_id: 1,
     title: "test-event-1",
     description: "test-description-1",
-    address: "test-address-1",
-    datetime: "2020-05-#{i+1} #{i}:00:00"
+    address: "1717 Test Street, Auburn AL 3683#{i}",
+    datetime: "2020-08-#{i+1} #{i+1}:00:00"
   )
 end
 
@@ -31,7 +31,7 @@ puts "Created 5 events User1"
     user_id: 2,
     title: "test-event-2",
     description: "test-description-2",
-    address: "test-address-2",
+    address: "2323 Other Test Street, Auburn AL 3683#{i}",
     datetime: "2020-05-#{i+1} #{i}:00:00"
   )
 end
@@ -43,8 +43,8 @@ puts "Created 5 events User2"
     user_id: 3,
     title: "test-event-3",
     description: "test-description-3",
-    address: "test-address-3",
-    datetime: "2020-05-#{i+1} #{i}:00:00"
+    address: "1717 My Street, Auburn AL 3683#{i}",
+    datetime: "2020-07-#{i+1} #{i}:10:00"
   )
 end
 
