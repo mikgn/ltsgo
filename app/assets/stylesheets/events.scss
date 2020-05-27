@@ -14,21 +14,15 @@
 
   background-size: cover;
   background-position: center;
-
-  //filter: blur(5px);
-  //-webkit-filter: blur(5px);
-  //-moz-filter: blur(5px);
-  //-o-filter: blur(5px);
-  //-ms-filter: blur(5px);
 }
 
 .event-background {
-  background-image: url('event_thumb.jpg');
+  background-image: url('7.jpg');
 }
 
 .event-background-show {
   padding: 0 20px;
-  background-image: url('event.jpg');
+  background-image: url('7.jpg');
 }
 
 .event-description {
