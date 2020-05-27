@@ -1,10 +1,5 @@
-h1 Editing User
-.row
-  .col-md-6.buffer-top
-    = render 'form', user: @user
-
-= link_to 'Show', @user
-  |
-= link_to 'Back', users_path
-
-
+.container.col-lg-6
+  h2.mb-3.mt-5 Editing User
+  .row
+    .col-md-12.buffer-top
+      = render 'form', user: @user

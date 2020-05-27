@@ -1,9 +1,13 @@
 = form_with(model: user, multipart: true) do |form|
   = render partial: 'partials/form_errors', locals: { model: @user }
   .form-group
-    = form.text_field :name, class: 'form-control', placeholder: 'Name'
+    = form.label :name
+    = form.text_field :name, class: 'form-control'
   .form-group
-    = form.text_field :email, class: 'form-control', placeholder: 'Email'
+    = form.label :email
+    = form.text_field :email, class: 'form-control'
   .actions
-    = form.submit 'Save', class: 'btn btn-primary'
-    = link_to 'Back', :back
+    = form.submit 'Save', class: 'btn btn-dark'
+    = link_to 'Back', :back, class: "btn btn-outline-dark ml-2"
+    - if controller_name == 'users'
+    = link_to 'Change Password', edit_user_registration_path, class: 'btn btn-outline-danger ml-2'

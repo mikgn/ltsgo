@@ -1,10 +1,35 @@
-.container {
-  padding-top: 20px;
+.logo-text {
+  font-weight: 800;
+  font-size: 34px;
 }
 
-.sidebar {
-  padding: 20px;
-  background-color: #F4F4F4;
+.create-event-btn {
+  font-weight: bold;
+  margin-left: 30px;
+}
+
+.create-event-btn a {
+  font-weight: bold;
+}
+
+.session-btns {
+  margin-left:auto;
+}
+
+@media screen and (max-width: 450px) {
+  .create-event-btn {
+    margin-top: 20px;
+    margin-left: 0;
+  }
+
+  .session-btns {
+    margin-right: auto;
+    padding-top: 20px;
+  }
+
+  .navbar-expand-lg {
+    padding-bottom: 20px;
+  }
 }
 
 /* Buffers */
@@ -32,7 +57,7 @@
 .thumbnail {
   position: relative;
   background: transparent;
-  padding: 0;
+  margin: 10px 0;
   overflow: hidden;
   border-radius: 5px;
 }
@@ -46,4 +71,20 @@
 
 .thumbnail-inner {
   padding: 20px 4px 4px;
+}
+
+//devise
+
+.delete-account-block {
+  margin-top: 30px;
+  padding: 30px;
+  background-color: #E9EBEE;
+}
+
+.delete-account-block h2 {
+  margin-bottom: 30px;
+}
+
+.alert-text-color {
+  color: #C82232;
 }

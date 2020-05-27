@@ -8,8 +8,7 @@ import "turbolinks"
 import "@rails/activestorage"
 import "channels"
 import "jquery"
-import "flatpickr"
-import flatpickr from "flatpickr";
+import "flatpickr";
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()

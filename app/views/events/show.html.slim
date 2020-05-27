@@ -1,15 +1,13 @@
-p#notice = notice
-.event
-  .event-info.row
-    .col-md-12
-      .event-background-show
-        .event-info-inner.row
-          .col-md-6
+.container.col-lg-6
+  .event
+    .event-info.row
+      .col-md-12
+        .event-background-show
+          .event-info-inner.row
             .event-description
-              h1 = @event.title
+              h2 = @event.title
               h3 = l(@event.datetime, format: :short)
               h3 = link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}"
               p = @event.description
-
-            .buffer-top
-              = link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary'
+        .buffer-top
+          = link_to 'Edit', edit_event_path(@event), class: 'btn btn-dark show-event-btn'

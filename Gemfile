@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
+# authentication
+gem 'devise'
+# slim syntax
 gem 'slim'
 # email validator
 gem 'email_validator'

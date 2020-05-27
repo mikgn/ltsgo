@@ -1,14 +1,17 @@
 = form_with(model: event, local: true) do |form|
   = render partial: 'partials/form_errors', locals: { model: @event }
   .form-group
-    = form.text_field :title, class: 'form-control', placeholder: 'Title'
+    = form.label :title
+    = form.text_field :title, class: 'form-control'
   .form-group
-    = form.text_field :datetime, class: 'form-control', id: 'flatpickr',
-                                 placeholder: 'Date and Time', autocomplete: "off"
+    = form.label :datetime
+    = form.text_field :datetime, class: 'form-control', id: 'flatpickr', autocomplete: "off"
   .form-group
-    = form.text_field :address, class: 'form-control', placeholder: 'Address'
+    = form.label :address
+    = form.text_field :address, class: 'form-control'
   .form-group
-    = form.text_area :description, class: 'form-control', rows: '4', placeholder: 'Description'
+    = form.label :description
+    = form.text_area :description, class: 'form-control', rows: '4'
   .actions
-    = form.submit 'Save', class: 'btn btn-primary'
-    = link_to 'Back', :back
+    = form.submit 'Save', class: 'btn btn-dark'
+    = link_to 'Back', :back, class: 'btn btn-outline-dark ml-2'

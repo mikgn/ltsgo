@@ -1,8 +1,5 @@
-p#notice = notice
-
-.text-center
-  h1 = @user.name
-  p.buffer-top
-  = link_to "Редактировать профиль", edit_user_path(@user), class: 'btn btn-primary'
-  /   |
-  / = link_to 'Back', users_path, class: 'btn btn-default'
+.container.col-lg-6
+  .text-center
+    h2.mb-4 = @user.name
+    p.buffer-top
+    = link_to "Edit Account", edit_user_path(@user), class: 'btn btn-dark'

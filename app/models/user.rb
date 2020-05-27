@@ -1,11 +1,17 @@
 class User < ApplicationRecord
-  has_many :events
+  # :confirmable, :trackable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
-  before_save { email.downcase! }
+  has_many :events, dependent: :delete_all
 
-  validates :name, presence: true, length: { maximum: 40 }
+  before_validation :set_name, on: :create
 
-  validates :email, presence: true,
-            email: true,
-            uniqueness: { case_sensitive: false }
+  validates :name, presence: true, length: { maximum: 35 }
+
+  private
+
+  def set_name
+    self.name = "User#{rand(1000000)}" if self.name.blank?
+  end
 end

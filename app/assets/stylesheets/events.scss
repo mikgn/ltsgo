@@ -27,6 +27,7 @@
 }
 
 .event-background-show {
+  padding: 0 20px;
   background-image: url('event.jpg');
 }
 
@@ -54,4 +55,8 @@
 
 #flatpickr {
   background-color: #fff;
+}
+
+.show-event-btn {
+  width: 40%;
 }
