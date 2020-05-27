@@ -14,7 +14,7 @@ puts "Created 3 Users"
 
 # Events
 
-3.times do |i|
+5.times do |i|
   Event.create!(
     user_id: 1,
     title: "test-event-1",
@@ -24,9 +24,9 @@ puts "Created 3 Users"
   )
 end
 
-puts "Created 3 events User1"
+puts "Created 5 events User1"
 
-3.times do |i|
+5.times do |i|
   Event.create!(
     user_id: 2,
     title: "test-event-2",
@@ -36,9 +36,9 @@ puts "Created 3 events User1"
   )
 end
 
-puts "Created 3 events User2"
+puts "Created 5 events User2"
 
-3.times do |i|
+5.times do |i|
   Event.create!(
     user_id: 3,
     title: "test-event-3",
@@ -48,4 +48,4 @@ puts "Created 3 events User2"
   )
 end
 
-puts "Created 3 events User3"
+puts "Created 5 events User3"
