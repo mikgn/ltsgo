@@ -9,5 +9,6 @@
               h3 = l(@event.datetime, format: :short)
               h3 = link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}"
               p = @event.description
-        .buffer-top
-          = link_to 'Edit', edit_event_path(@event), class: 'btn btn-dark show-event-btn'
+          - if current_user_can_edit?(@event)
+            .buffer-top
+              = link_to 'Edit', edit_event_path(@event), class: 'btn btn-dark show-event-btn'

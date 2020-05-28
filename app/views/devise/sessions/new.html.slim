@@ -3,6 +3,8 @@
     h2.mb-4 Log in
 
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+
       .form-group
         = f.label :email
         = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
