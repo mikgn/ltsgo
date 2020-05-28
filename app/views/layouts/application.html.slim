@@ -18,10 +18,10 @@ html
       .collapse.navbar-collapse#navbarNav
         - if current_user
           .create-event-btn
-            = link_to 'Create event', new_event_path, class: 'btn btn-lg btn-outline-light'
+            = link_to 'Create event', new_event_path, class: 'btn btn-lg btn-primary'
         .session-btns
         - if user_signed_in?
-          = link_to 'My Profile', current_user, class: "btn btn-outline-light"
+          = link_to 'Profile', current_user, class: "btn btn-outline-light"
           = link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light ml-2"
         - else
           = link_to 'Log in', new_user_session_path, class: "btn btn-outline-light"

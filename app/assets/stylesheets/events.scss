@@ -30,6 +30,11 @@
 
 .event-description a {
   color: #d0d0ff;
+  text-decoration:none
+}
+
+.event-description a:hover {
+  opacity: 0.6;
 }
 
 .event-description small {
@@ -51,5 +56,12 @@
 }
 
 .show-event-btn {
-  width: 40%;
+  padding: 5px 30px;
+}
+
+.no-events {
+  margin-top: 30px;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 5px;
 }

@@ -1,3 +1,7 @@
+.text-center {
+  margin: 0 auto;
+}
+
 .form-border {
   padding: 20px 40px;
   border: 1px solid #20272B;
@@ -19,7 +23,7 @@
 }
 
 .full-screen-height {
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .session-btns {
@@ -86,8 +90,8 @@
 //devise
 
 .delete-account-block {
-  margin-top: 30px;
-  padding: 30px;
+  margin-top: 20px;
+  padding: 20px;
   background-color: #E9EBEE;
 }
 
@@ -121,6 +125,10 @@ footer img {
   height: 28px;
   background: radial-gradient(circle at center, white 60%, transparent 61%);
   overflow: hidden;
+}
+
+footer img:hover {
+  opacity: 0.6;
 }
 
 .copyright {
