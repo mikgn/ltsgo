@@ -9,7 +9,6 @@ import "@rails/activestorage"
 import "channels"
 import "jquery"
 import "flatpickr"
-import "@fortawesome/fontawesome-free/css/all.css"
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()

@@ -10,7 +10,6 @@ html
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = favicon_link_tag 'favicon.png', rel: 'shortcut icon'
     link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet"
-    link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"
   body
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.list-unstyled
       = link_to 'LTSGo', root_path, class: "navbar-brand logo-text"
@@ -37,13 +36,11 @@ html
 
     footer.page-footer.mt-5
       .text-center.py-3
-        = mail_to 'kogan.miha@gmail.com', class: "btn btn-sm"
-          i.fas.fa-envelope-square.fa-2x
-        = link_to "tel:#{+528661405685}", class: "btn btn-sm"
-          i.fas.fa-phone-square.fa-2x
-        = link_to 'https://github.com/mikgn', class: "btn btn-sm"
-          i.fab.fa-github-square.fa-2x
-        = link_to 'https://www.linkedin.com/in/michamichael/', class: "btn btn-sm"
-          i.fab.fa-linkedin.fa-2x
+        = mail_to 'kogan.miha@gmail.com'
+          = image_tag 'mail.jpeg'
+        = link_to 'https://github.com/mikgn'
+          = image_tag 'github.jpeg'
+        = link_to 'https://www.linkedin.com/in/michamichael/'
+          = image_tag 'linkedin.jpeg'
 
         span.copyright  © 2020 Copyright: Michael Kogan
