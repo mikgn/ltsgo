@@ -1,5 +1,17 @@
-.container.full-screen-height.col-lg-6.mt-5
+.container.full-screen-height.col-lg-12.mt-5
   .text-center
     h2.mb-4 = @user.name
-    p.buffer-top
-    = link_to "Edit Account", edit_user_path(@user), class: 'btn btn-dark'
+
+    = image_tag user_avatar
+    - if @user == current_user
+      p.buffer-top
+      = link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-dark'
+
+    .row
+      .users-events.mt-4
+      - if @user.events.any?
+        .row
+          = render partial: 'events/event', collection: @user.events
+      - else
+        .text-center
+          h3.no-events No events
