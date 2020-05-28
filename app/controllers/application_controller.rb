@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  helper_method :current_user_can_edit?
+
   def configure_permitted_parameters
     added_attrs = [:name, :email, :password, :password_confirmation, :remember_me]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
