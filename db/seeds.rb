@@ -17,9 +17,9 @@ puts "Created 3 Users"
 5.times do |i|
   Event.create!(
     user_id: 1,
-    title: "test-event-#{i}",
-    description: "test-description-1",
-    address: "1717 Test Street, Auburn AL 3683#{i}",
+    title: "Event#{i+1}",
+    description: "test-description-#{i+1}",
+    address: "1717 Test Street, Auburn AL 3683#{i+1}",
     datetime: "2020-06-#{i+1} #{i+1}:00:00"
   )
 end
@@ -29,10 +29,10 @@ puts "Created 5 events User1"
 5.times do |i|
   Event.create!(
     user_id: 2,
-    title: "test-event-#{i+6}",
-    description: "test-description-2",
-    address: "2323 Other Test Street, Auburn AL 3683#{i}",
-    datetime: "2020-07-#{i+1} #{i}:00:00"
+    title: "Event#{i+6}",
+    description: "test-description-#{i+6}",
+    address: "2323 Other Test Street, Auburn AL 3683#{i+6}",
+    datetime: "2020-07-#{i+6} #{i}:00:00"
   )
 end
 
@@ -41,10 +41,10 @@ puts "Created 5 events User2"
 5.times do |i|
   Event.create!(
     user_id: 3,
-    title: "test-event-#{i+11}",
-    description: "test-description-3",
-    address: "1717 My Stree6, Auburn AL 3683#{i}",
-    datetime: "2020-08-#{i+1} #{i}:10:00"
+    title: "Event#{i+11}",
+    description: "test-description-#{i+11}",
+    address: "1717 My Stree6, Auburn AL 3683#{i+11}",
+    datetime: "2020-08-#{i+11} #{i}:10:00"
   )
 end
 
