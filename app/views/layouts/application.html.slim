@@ -29,9 +29,6 @@ html
     .container
       .row
         .col-lg-12
-          - flash.each do |type, msg|
-            .alert.alert-info.mt-2
-              = msg
           = yield
 
     footer.page-footer.mt-5
@@ -44,3 +41,5 @@ html
           = image_tag 'linkedin.jpeg'
 
         span.copyright  © 2020 Copyright: Michael Kogan
+
+= render 'sweetify/alert'

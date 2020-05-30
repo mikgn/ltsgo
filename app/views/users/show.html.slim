@@ -7,11 +7,11 @@
       p.buffer-top
       = link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-dark'
 
-    .row
-      .users-events.mt-4
-      - if @user.events.any?
-        .row
-          = render partial: 'events/event', collection: @user.events
-      - else
-        .text-center
-          h3.no-events No events
+  .row
+    .users-events.mt-4
+    - if @user.events.any?
+      .row
+        = render partial: 'events/event', collection: @user.events
+    - else
+      .text-center
+        h3.no-events No events

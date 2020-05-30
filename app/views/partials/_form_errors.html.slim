@@ -1,7 +1,5 @@
-- errors = model.errors
-
-- if errors.any?
+- if model.errors.any?
   #error_explanation
-    ul.list-unstyled
-      - errors.full_messages.each do |message|
-        li = message
+    ul
+      - model.errors.full_messages.each do |message|
+        li.alert-text-color = message

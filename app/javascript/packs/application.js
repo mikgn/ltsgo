@@ -9,6 +9,7 @@ import "@rails/activestorage"
 import "channels"
 import "jquery"
 import "flatpickr"
+import "sweetalert"
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()

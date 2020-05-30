@@ -3,7 +3,7 @@
     h2.mb-4 Log in
 
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      = render "devise/shared/error_messages", resource: resource
+      = render "devise/shared/session_errors"
 
       .form-group
         = f.label :email
