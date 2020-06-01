@@ -5,7 +5,7 @@
     = image_tag user_avatar
     - if @user == current_user
       p.buffer-top
-      = link_to "Edit Profile", edit_user_path(@user), class: 'btn btn-dark'
+      = link_to t('users.edit_user'), edit_user_path(@user), class: 'btn btn-dark'
 
   .row.mt-3
     .users-events
@@ -13,4 +13,4 @@
       = render partial: 'events/event', collection: @user.events
     - else
       .text-center
-        h3.no-events No events
+        h3.no-events = t('events.no_events_title')

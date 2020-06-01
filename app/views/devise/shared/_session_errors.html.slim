@@ -1,4 +1,7 @@
 - flash.each do |_, value|
   #error_explanation
+    p
+      span.errors-count
+        = t('form.errors', count: flash.count)
     ul
       li.flash.alert-text-color = value

@@ -22,7 +22,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        sweetalert_success('Event was successfully created')
+        sweetalert_success t('events.notice.created')
         format.html { redirect_to @event }
         format.json { render :show, status: :created, location: @event }
       else
@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   def update
     respond_to do |format|
       if @event.update(event_params)
-        sweetalert_success('Event was successfully updated')
+        sweetalert_success t('events.notice.updated')
         format.html { redirect_to @event }
         format.json { render :show, status: :ok, location: @event }
       else
@@ -47,7 +47,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event.destroy
-    sweetalert_success('Event was successfully deleted')
+    sweetalert_success t('events.notice.deleted')
     respond_to do |format|
       format.html { redirect_to events_url }
       format.json { head :no_content }

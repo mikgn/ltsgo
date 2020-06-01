@@ -11,4 +11,4 @@
               p = @event.description
         - if current_user_can_edit?(@event)
           .mt-3
-            = link_to 'Edit', edit_event_path(@event), class: 'btn btn-dark show-event-btn'
+            = link_to t('events.editing_event'), edit_event_path(@event), class: 'btn btn-dark show-event-btn'

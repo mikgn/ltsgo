@@ -2,4 +2,13 @@
 @import 'custom';
 @import 'events';
 @import 'flatpickr/dist/flatpickr.css';
-@import 'sweetalert.scss';
+
+// notifications modal
+
+.swal-modal {
+  padding: 30px;
+}
+
+.swal-title {
+  font-size: 28px;
+}

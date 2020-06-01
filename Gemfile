@@ -7,6 +7,10 @@ ruby '2.6.2'
 gem 'sweetify'
 # authentication
 gem 'devise'
+# inter for devise
+gem 'devise-i18n'
+# Russian support
+gem 'rails-i18n', '~> 6.0.0'
 # slim syntax
 gem 'slim'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

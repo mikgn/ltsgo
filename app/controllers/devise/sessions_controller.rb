@@ -17,7 +17,7 @@ class Devise::SessionsController < DeviseController
   # POST /resource/sign_in
   def create
     self.resource = warden.authenticate!(auth_options)
-    sweetalert_success('Signed in')
+    sweetalert_success(t('devise.sessions.signed_in'))
     sign_in(resource_name, resource)
     yield resource if block_given?
     respond_with resource, location: after_sign_in_path_for(resource)
@@ -26,7 +26,7 @@ class Devise::SessionsController < DeviseController
   # DELETE /resource/sign_out
   def destroy
     signed_out = (Devise.sign_out_all_scopes ? sign_out : sign_out(resource_name))
-    sweetalert_success('Signed out') if signed_out
+    sweetalert_success(t('devise.sessions.signed_out')) if signed_out
     yield if block_given?
     respond_to_on_destroy
   end
@@ -60,7 +60,7 @@ class Devise::SessionsController < DeviseController
   # to the after_sign_out path.
   def verify_signed_out_user
     if all_signed_out?
-      sweetalert_info('Already Signed out')
+      sweetalert_info(t('devise.sessions.signed_out'))
       respond_to_on_destroy
     end
   end

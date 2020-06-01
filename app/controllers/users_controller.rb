@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        sweetalert_success('User was successfully updated')
+        sweetalert_success(t('users.notice.updated'))
         format.html { redirect_to @user }
         format.json { render :show, status: :ok, location: @user }
       else

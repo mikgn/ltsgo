@@ -1,11 +1,11 @@
 .container.col-lg-6
   .form-border.mt-2
-    h2.mb-4 Editing Event
+    h2.mb-4 = t('events.editing_event')
 
     .row
       .col-lg-12
         = render 'form', event: @event
         .delete-account-block.alert-text-color
-          h2 Danger zone
-          = button_to "Delete Event", event_path(@event),
+          h2 = t('form.danger_zone')
+          = button_to t('events.delete_event'), event_path(@event),
                   data: {confirm: "Are you sure?"}, method: :delete, class: 'btn btn-outline-danger'

@@ -1,0 +1,62 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+    attributes:
+      user:
+        name: 'Имя'
+        email: 'E-mail'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+      event:
+        datetime: 'Дата и Время'
+        title: 'Заголовок'
+        address: 'Место события'
+        description: 'Описание'
+  nav:
+    sign_up: 'Регистрация'
+    sign_up_submit: 'Создать Профиль'
+    log_in: 'Войти'
+    log_out: 'Выйти'
+    profile: 'Профиль'
+  events:
+    editing_event: 'Изменить Событие'
+    new_event: 'Новое Событие'
+    create_event: 'Создать Событие'
+    delete_event: "Удалить Событие"
+    no_events_title: 'Нет Событий'
+    notice:
+      created: 'Событие создано'
+      updated: 'Изменения успешно сохранены'
+      deleted: 'Событие удалено'
+  users:
+    edit_user: 'Редактировать Профиль'
+    edit_password: 'Сменить пароль'
+    notice:
+      signed_up: 'Зарегистрировались!'
+      updated: 'Изменения сохранены'
+      destroyed: 'Пользователь удален'
+  form:
+    errors:
+      zero: 'нет ошибок'
+      one: '%{count} ошибка'
+      few: '%{count} ошибки'
+      many: '%{count} ошибок'
+      other: '%{count} ошибок'
+    name: 'Имя'
+    email: 'E-mail'
+    datetime: 'Дата и Время'
+    title: 'Заголовок'
+    address: 'Место события'
+    description: 'Описание'
+    password: 'Пароль'
+    password_confirmation: 'Подтверждение пароля'
+    current_password: 'Текущий пароль'
+    remember_me: 'Запомнить пароль'
+    save: 'Сохранить'
+    back: 'Назад'
+    change_password: 'Сменить пароль'
+    danger_zone: 'Опасная зона'
+    cancel_account: "Удалить аккаунт"

@@ -1,14 +1,14 @@
 .container.full-screen-height.col-lg-6
   .form-border.mt-5.p-4
-    h2.mb-4 Forgot your password?
+    h2.mb-4 = t('devise.links.forgot_password')
 
     = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
       = render "devise/shared/error_messages", resource: resource
 
       .form-group
-        = f.label :email
+        = f.label t('form.email')
         = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
 
       .actions
-        = f.submit "Send reset password instructions", class: 'btn btn-dark send-instructions'
+        = f.submit t('devise.links.send_pass_instr_btn'), class: 'btn btn-dark send-instructions'
         = render "devise/shared/links"
