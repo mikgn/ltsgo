@@ -41,7 +41,7 @@ ru:
   form:
     errors:
       zero: 'нет ошибок'
-      one: '%{count} ошибка'
+      one: 'Ошибка'
       few: '%{count} ошибки'
       many: '%{count} ошибок'
       other: '%{count} ошибок'

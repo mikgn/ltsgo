@@ -72,7 +72,7 @@ en:
   form:
     errors:
       zero: 'no errors'
-      one: '%{count} error'
+      one: 'error'
       few: '%{count} errors'
       many: '%{count} errors'
       other: '%{count} errors'

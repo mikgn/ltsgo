@@ -24,9 +24,9 @@ class UsersController < ApplicationController
 
   #def destroy
   #  @user.destroy
-  # sweetalert_success('User was successfully destroyed')
+  # sweetalert_success(t('users.notice.destroyed'))
   #  respond_to do |format|
-  #    format.html { redirect_to users_url }
+  #    format.html { redirect_to events_path }
   #    format.json { head :no_content }
   #  end
   #end
