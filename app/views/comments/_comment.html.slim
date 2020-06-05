@@ -1,0 +1,17 @@
+.comment-block
+  .comment
+    .user-block
+      .avatar
+        = image_tag(user_avatar(comment.user), class: 'img-icon')
+      .name-datetime-comment-buttons
+        .name
+          = link_to comment.user.name, user_path(comment.user)
+          span.datetime
+            = l(comment.created_at, format: :short)
+        .comment
+          = comment.body
+        - if user_can_edit_comment?(comment)
+          .buttons
+            = link_to event_comment_path(comment.event, comment), method: :delete,
+                    data: { confirm: t('comments.alert.confirm') }, class: 'trash-button', id: 'deleting-alert'
+              = image_tag('trash.png')

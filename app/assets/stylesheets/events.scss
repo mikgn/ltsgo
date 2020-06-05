@@ -65,3 +65,62 @@
   border: 1px solid #000;
   border-radius: 5px;
 }
+
+
+// comments
+
+.comments-block {
+  background-color: #F6F7F9;
+}
+
+.comment-block {
+  padding: 7px;
+  margin-top: 15px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.user-block {
+  display: flex;
+}
+
+.avatar-datetime {
+  width: 100px;
+  height: 100px;
+  flex-direction: column;
+}
+
+.name-datetime-comment-buttons {
+  flex-direction: column;
+  margin-left: 8px;
+
+  .name {
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .datetime {
+    margin-left: 5px;
+    font-size: 14px;
+    color: #000;
+    opacity: 0.5;
+  }
+
+  .comment {
+    margin-top: 3px;
+    text-align: start;
+    color: #000 !important;
+    opacity: 0.8;
+  }
+}
+
+.trash-button:hover {
+  opacity: 0.7;
+}
+
+.buttons {
+  a {
+    float: right;
+  }
+}
