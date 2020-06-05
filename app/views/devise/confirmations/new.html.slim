@@ -1,12 +1,10 @@
 .form-border.mt-5.p-4
-  h2.mb-4 Resend confirmation instructions
-
+  h2.mb-4 = t('devise.confirmations.resend')
   = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
     = render "devise/shared/error_messages", resource: resource
-
     .form-group
       = f.label :email
     .actions
-      = f.submit "Resend confirmation instructions"
+      = f.submit t('devise.confirmations.resend')
 
   = render "devise/shared/links"

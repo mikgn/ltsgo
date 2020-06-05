@@ -31,13 +31,29 @@ ru:
       created: 'Событие создано'
       updated: 'Изменения успешно сохранены'
       deleted: 'Событие удалено'
+    alert: "Вы действительно хотите удалить это событие?"
+  comments:
+    notice:
+      alert:
+        confirm: "Вы действительно хотите удалить этот комментарий?"
+      created: 'Комментарий добавлен'
+      updated: 'Изменения успешно сохранены'
+      deleted: 'Комментарий удален'
   users:
+    anonymous: "Аноним"
     edit_user: 'Редактировать Профиль'
     edit_password: 'Сменить пароль'
     notice:
       signed_up: 'Зарегистрировались!'
       updated: 'Изменения сохранены'
       destroyed: 'Пользователь удален'
+    alert: "Вы действительно хотите удалить аккаунт?"
+  subscriptions:
+    notice:
+      subscribed: 'Вы успешно подписались на событие'
+      unsubscribed: 'Вы успешно отписались от события'
+    user_subscribed: "пользователь уже подписан на событие"
+    email_subscribed: "e-mail уже использован для подписки на событие"
   form:
     errors:
       zero: 'нет ошибок'
@@ -45,6 +61,7 @@ ru:
       few: '%{count} ошибки'
       many: '%{count} ошибок'
       other: '%{count} ошибок'
+    comment: "Новый Комментарий"
     name: 'Имя'
     email: 'E-mail'
     datetime: 'Дата и Время'

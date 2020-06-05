@@ -7,4 +7,4 @@
         .delete-account-block.alert-text-color
           h2 = t('form.danger_zone')
           = button_to t('events.delete_event'), event_path(@event), method: :delete,
-                  data: {confirm: "Are you sure?"}, class: 'btn btn-outline-danger'
+                  data: {confirm: t('events.alert')}, class: 'btn btn-outline-danger'

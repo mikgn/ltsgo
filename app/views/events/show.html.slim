@@ -1,7 +1,7 @@
-.container.full-screen-height.col-lg-6.mt-5
+.container.full-screen-height.col-lg-12.mt-5
   .event
-    .event-info.row
-      .col-md-12
+    .row.event-info
+      .col-md-6
         .event-background-show
           .event-info-inner.row
             .event-description
@@ -9,6 +9,9 @@
               h3 = l(@event.datetime, format: :short)
               h3 = link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}"
               p = @event.description
-        - if current_user_can_edit?(@event)
+        - if user_can_edit_event?(@event)
           .mt-3
             = link_to t('events.editing_event'), edit_event_path(@event), class: 'btn btn-dark show-event-btn'
+
+      .comments-block.col-md-6
+        = render partial: 'comments/comment', collection: @event.comments

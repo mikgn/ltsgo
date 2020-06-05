@@ -32,7 +32,7 @@
 en:
   activerecord:
     models:
-      user: User
+      user: 'User'
       event: 'Event'
     attributes:
       user:
@@ -62,13 +62,29 @@ en:
       created: 'Event was successfully created'
       updated: 'Event was successfully updated'
       deleted: 'Event was successfully deleted'
+    alert: "Are you sure want to delete this event?"
+  comments:
+    alert:
+      confirm: "Are you sure want to delete this comment?"
+    notice:
+      created: 'Comment was successfully created'
+      updated: 'Comment was successfully updated'
+      deleted: 'Comment was successfully deleted'
   users:
+    anonymous: "Anonymous"
     edit_user: 'Edit User'
     edit_password: 'Edit Password'
     notice:
       signed_up: 'Signed up successfully!'
       updated: 'The changes have been saved'
-      destroyed: 'User has been deleted'
+      destroyed:
+    alert: "Are you sure want to delete your account"
+  subscriptions:
+    notice:
+      subscribed: 'You have successfully subscribed to the event'
+      unsubscribed: 'You have successfully unsubscribed from the event'
+    user_subscribed: "user is already subscribed to the event"
+    email_subscribed: "email is already subscribed to the event"
   form:
     errors:
       zero: 'no errors'
@@ -76,6 +92,8 @@ en:
       few: '%{count} errors'
       many: '%{count} errors'
       other: '%{count} errors'
+      form:
+    comment: "New comment"
     name: 'Name'
     email: 'Email'
     datetime: 'Date and Time'
