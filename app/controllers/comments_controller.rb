@@ -6,30 +6,22 @@ class CommentsController < ApplicationController
     @new_comment = @event.comments.build(comment_params)
     @new_comment.user = current_user
 
-    respond_to do |format|
-      if @new_comment.save
-        sweetalert_success t('comments.notice.created')
-        redirect_to @event
-        format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { render 'events/show'}
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
+    if @new_comment.save
+      sweetalert_success t('comments.notice.created')
+      redirect_to @event
+    else
+      render 'events/show'
     end
   end
 
   # TODO
   #
   #def update
-  #  respond_to do |format|
-  #    if @comment.update(comment_params)
-  #      sweetalert_success t('comments.notice.updated')
-  #      redirect_to @comment
-  #      format.json { render :show, status: :ok, location: @comment }
-  #    else
-  #      format.html { render :edit }
-  #      format.json { render json: @comment.errors, status: :unprocessable_entity }
-  #    end
+  #  if @comment.update(comment_params)
+  #    sweetalert_success t('comments.notice.updated')
+  #    redirect_to @comment
+  #  else
+  #    render :edit
   #  end
   #end
 

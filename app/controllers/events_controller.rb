@@ -20,37 +20,27 @@ class EventsController < ApplicationController
   def create
     @event = current_user.events.build(event_params)
 
-    respond_to do |format|
-      if @event.save
-        sweetalert_success t('events.notice.created')
-        format.html { redirect_to @event }
-        format.json { render :show, status: :created, location: @event }
-      else
-        format.html { render :new }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.save
+      sweetalert_success t('events.notice.created')
+      redirect_to @event
+    else
+      render :new
     end
   end
 
   def update
-    respond_to do |format|
-      if @event.update(event_params)
-        sweetalert_success t('events.notice.updated')
-        format.html { redirect_to @event }
-        format.json { render :show, status: :ok, location: @event }
-      else
-        format.html { render :edit }
-        format.json { render json: @event.errors, status: :unprocessable_entity }
-      end
+    if @event.update(event_params)
+      sweetalert_success t('events.notice.updated')
+      redirect_to @event
+    else
+      render :edit
     end
   end
 
   def destroy
     @event.destroy
     sweetalert_success t('events.notice.deleted')
-    respond_to do |format|
-      format.html { redirect_to events_url }
-      format.json { head :no_content }
+    redirect_to events_url
     end
   end
 
