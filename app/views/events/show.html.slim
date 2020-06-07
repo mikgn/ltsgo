@@ -9,9 +9,18 @@
               h3 = l(@event.datetime, format: :short)
               h3 = link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}"
               p = @event.description
-        - if user_can_edit_event?(@event)
-          .mt-3
-            = link_to t('events.editing_event'), edit_event_path(@event), class: 'btn btn-dark show-event-btn'
+              - if user_can_edit?(@event)
+                .button
+                  = link_to t('events.editing_event'), edit_event_path(@event),
+                          class: 'btn btn-outline-light show-event-btn'
+
+        - if @event.subscribers.any?
+          .subscribers-block
+            span #{t('subscriptions.subscribed', count: flash.count)}:
+            button.btn.btn-primary.btn-sm.ml-1 data-toggle="modal" data-target="#exampleModalCenter"
+              span #{@event.subscribers.count}
 
       .comments-block.col-md-6
         = render partial: 'comments/comment', collection: @event.comments
+
+= render partial: 'subscriptions/subscribers_modal'

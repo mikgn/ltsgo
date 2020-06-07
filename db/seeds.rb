@@ -1,6 +1,6 @@
 # Users
 
-3.times do |i|
+5.times do |i|
   User.create!(
     name: "User#{i+1}",
     email: "user#{i+1}@test.com",
@@ -49,3 +49,50 @@ puts "Created 5 events User2"
 end
 
 puts "Created 5 events User3"
+
+
+# Comments
+
+event = Event.find(1)
+
+3.times do
+  event.comments.create!(
+    body: "Lorem Ipsum has been the industry'sstandard dummy text ever since the 1500s,
+           when an unknown printer took a galley of type and scrambled it to make a type
+           specimen book. It has survived not only five centuries.",
+    user_id: 1
+  )
+end
+
+3.times do
+  event.comments.create!(
+    body: "Lorem Ipsum has been the industry'sstandard dummy text ever since the 1500s,
+           when an unknown printer took a galley of type and scrambled it to make a type
+           specimen book. It has survived not only five centuries.",
+    user_id: 2
+  )
+end
+
+puts "Created 6 comments on Event(1), 3 of user_id:1 and 3 of user_id: 2"
+
+# Subscriptions
+
+#
+#5.times do |i|
+#  Subscription.create!(
+#    user: User.find(i+1),
+#    event: Event.find(1)
+#  )
+#end
+#
+#puts "Created 5 Subscribers User class on Event(1)"
+#
+#2.times do |i|
+#  Subscription.create!(
+#    user_name: "Alex#{i+1}",
+#    user_email: "alex@test.com",
+#    event_id: 1
+#  )
+#end
+#
+#puts "Created 2 no registered Subscribers"

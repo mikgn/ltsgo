@@ -56,7 +56,8 @@
 }
 
 .show-event-btn {
-  padding: 5px 30px;
+  float: right;
+  padding: 5px 10px;
 }
 
 .no-events {
@@ -75,7 +76,7 @@
 
 .comment-block {
   padding: 7px;
-  margin-top: 15px;
+  margin: 10px 0;
   border-radius: 3px;
   background-color: #fff;
 }
@@ -122,5 +123,76 @@
 .buttons {
   a {
     float: right;
+  }
+}
+
+// subscribers
+
+.subscribers-block {
+  span {
+    color: #000 !important;
+    opacity: 0.6;
+    font-weight: bold;
+  }
+
+  button {
+    width: 30px;
+    height: 30px;
+    border-radius: 70%;
+    font-weight: bold;
+  }
+
+  button span {
+    opacity: 1;
+    color: #fff !important;
+  }
+
+  margin: 10px 0;
+}
+
+// modal subscribers
+
+.modal-dialog{
+  overflow-y: initial !important
+}
+
+.modal-body{
+  height: 400px;
+  overflow-y: auto;
+}
+
+.modal-header {
+  border-bottom: none !important;
+  text-align: center !important;
+
+  p {
+    padding-top: 8px;
+    font-size: 22px;
+    opacity: 0.8;
+  }
+}
+
+.subscriber-block {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.user-link {
+  margin-left: 20px;
+  a {
+    text-decoration: none;
+  }
+}
+
+.unsub-btn {
+  margin-left: 30px;
+}
+
+.user-events-link {
+  margin-left: auto;
+
+  @media (max-width: 450px)  {
+    margin-left: 20px;
   }
 }

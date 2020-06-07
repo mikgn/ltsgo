@@ -10,7 +10,7 @@
             = l(comment.created_at, format: :short)
         .comment
           = comment.body
-        - if user_can_edit_comment?(comment)
+        - if user_can_edit?(comment)
           .buttons
             = link_to event_comment_path(comment.event, comment), method: :delete,
                     data: { confirm: t('comments.alert.confirm') }, class: 'trash-button', id: 'deleting-alert'

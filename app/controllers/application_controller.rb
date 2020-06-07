@@ -1,13 +1,17 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user_can_edit?
+  helper_method :user_can_edit?
 
   def configure_permitted_parameters
-    added_attrs = [:name, :email, :password, :password_confirmation, :remember_me]
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+    attrs = [:name, :email, :password, :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: attrs
+    devise_parameter_sanitizer.permit :account_update, keys: attrs
   end
 
-  def current_user_can_edit?(event)
-    user_signed_in? && current_user.id == event.user_id
+  def user_can_edit?(model)
+    if user_signed_in?
+      model.user == current_user ||
+
+      model.try(:event).present? && model.event.user == current_user
+    end
   end
 end

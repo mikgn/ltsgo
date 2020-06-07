@@ -2,7 +2,7 @@
   .text-center
     h2.mb-4 = @user.name
 
-    = image_tag user_avatar
+    = image_tag user_avatar(@user)
     - if @user == current_user
       p.buffer-top
       = link_to t('users.edit_user'), edit_user_path(@user), class: 'btn btn-dark'

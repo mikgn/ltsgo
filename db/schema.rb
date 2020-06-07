@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_06_04_034734) do
   create_table "subscriptions", force: :cascade do |t|
     t.string "user_name"
     t.string "user_email"
-    t.bigint "event_id", null: false
+    t.bigint "event_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -65,4 +65,5 @@ ActiveRecord::Schema.define(version: 2020_06_04_034734) do
   add_foreign_key "comments", "users"
   add_foreign_key "events", "users"
   add_foreign_key "subscriptions", "events"
+  add_foreign_key "subscriptions", "users"
 end

@@ -7,8 +7,8 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
-      sweetalert_success t('comments.notice.created')
       redirect_to @event
+      sweetalert_success t('comments.notice.created')
     else
       render 'events/show'
     end
@@ -26,12 +26,13 @@ class CommentsController < ApplicationController
   #end
 
   def destroy
-    if user_can_edit_comment?(@comment)
-      sweetalert_success t('comments.notice.deleted')
+    if user_can_edit?(@comment)
       @comment.destroy!
       redirect_to @event
+      sweetalert_success t('comments.notice.deleted')
     else
       redirect_to @event
+      # TODO: error
     end
   end
 

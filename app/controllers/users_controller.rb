@@ -11,8 +11,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      sweetalert_success(t('users.notice.updated'))
       redirect_to @user
+      sweetalert_success t('users.notice.updated')
     else
       render :edit
     end
@@ -20,8 +20,8 @@ class UsersController < ApplicationController
 
   #def destroy
   #  @user.destroy
-  #  sweetalert_success(t('users.notice.destroyed'))
   #  redirect_to events_path
+  #  sweetalert_success(t('users.notice.destroyed'))
   #end
 
   private

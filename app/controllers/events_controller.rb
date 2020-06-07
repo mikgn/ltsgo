@@ -21,8 +21,8 @@ class EventsController < ApplicationController
     @event = current_user.events.build(event_params)
 
     if @event.save
-      sweetalert_success t('events.notice.created')
       redirect_to @event
+      sweetalert_success t('events.notice.created')
     else
       render :new
     end
@@ -30,17 +30,21 @@ class EventsController < ApplicationController
 
   def update
     if @event.update(event_params)
-      sweetalert_success t('events.notice.updated')
       redirect_to @event
+      sweetalert_success t('events.notice.updated')
     else
       render :edit
     end
   end
 
   def destroy
-    @event.destroy
-    sweetalert_success t('events.notice.deleted')
-    redirect_to events_url
+    if user_can_edit?(@event)
+      @event.destroy
+      redirect_to events_url
+      sweetalert_success t('events.notice.deleted')
+    else
+      redirect_to events_url
+      # TODO: error
     end
   end
 

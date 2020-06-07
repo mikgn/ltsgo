@@ -1,0 +1,27 @@
+.modal.fade#exampleModalCenter tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+  .modal-dialog.modal-dialog-centered role="document"
+    .modal-content
+      .modal-header
+        p.subscribers-title = t('subscriptions.subscribers')
+        button.close type="button" data-dismiss="modal" aria-label="Close"
+          span aria-hidden="true" &times;
+
+      .modal-body
+        ul.list-unstyled
+        - @event.subscriptions.each do |sub|
+          li.subscriber-block
+            - if sub.user_id.nil?
+              = sub.user_name
+            - else
+              span.user-img = image_tag(user_avatar(sub), class: 'img-icon')
+              span.user-link = link_to sub.user_name, user_path(sub)
+
+              - if user_can_edit?(sub)
+                = link_to 'x', event_subscription_path(sub.event, sub),
+                        method: :delete,
+                        data: { confirm: t('subscriptions.alert') },
+                        class: 'btn btn-outline-danger unsub-btn'
+
+              - if sub.user.events.any?
+                = link_to t('subscriptions.check_events'), user_path(sub),
+                        class: "button btn btn-outline-primary user-events-link"

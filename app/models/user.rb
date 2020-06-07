@@ -3,7 +3,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :events, dependent: :delete_all
+  has_many :events, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
 
   before_validation :set_name, on: :create
 
@@ -12,6 +14,6 @@ class User < ApplicationRecord
   private
 
   def set_name
-    self.name = "User#{rand(1000000)}" if self.name.blank?
+    self.name = "#{I18n.t('activerecord.models.user')}#{rand(100000)}" if self.name.blank?
   end
 end

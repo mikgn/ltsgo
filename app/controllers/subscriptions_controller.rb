@@ -1,22 +1,27 @@
 class SubscriptionsController < ApplicationController
   before_action :set_event, only: [:create, :destroy]
-  before_action :set_subscription, only: :destroy
+  before_action :set_subscription, only: [ :destroy ]
 
   def create
     @new_subscription = @event.subscriptions.build(subscription_params)
+    @new_subscription.user = current_user
 
-    if @subscription.save
+    if @new_subscription.save
+      redirect_to @event
       sweetalert_success t('subscriptions.notice.subscribed')
-      redirect_to @subscription
     else
-      render :new
+      render 'events/show'
     end
   end
 
   def destroy
-    @subscription.destroy
-    sweetalert_success t('subscriptions.notice.unsubscribed')
-    redirect_to subscriptions_url
+    if user_can_edit?(@subscription)
+      @subscription.destroy
+      sweetalert_success t('subscriptions.notice.unsubscribed')
+    else
+      # TODO: errors
+    end
+    redirect_to @event
   end
 
   private
