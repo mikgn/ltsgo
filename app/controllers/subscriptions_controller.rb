@@ -31,7 +31,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def set_event
-    @event = Event.find(params[:id])
+    @event = Event.find(params[:event_id])
   end
 
   def subscription_params
