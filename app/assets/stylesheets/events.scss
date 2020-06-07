@@ -152,6 +152,10 @@
 
 // modal subscribers
 
+.modal-content {
+  padding: 20px;
+}
+
 .modal-dialog{
   overflow-y: initial !important
 }
@@ -166,7 +170,6 @@
   text-align: center !important;
 
   p {
-    padding-top: 8px;
     font-size: 22px;
     opacity: 0.8;
   }
@@ -186,13 +189,20 @@
 }
 
 .unsub-btn {
-  margin-left: 30px;
+  margin-left: auto;
+  font-weight: bold;
+  color: #DC3545;
+}
+
+.unsub-btn:hover {
+  background-color: #DC3545;
+  color: #fff;
 }
 
 .user-events-link {
   margin-left: auto;
 
   @media (max-width: 450px)  {
-    margin-left: 20px;
+    display: none;
   }
 }

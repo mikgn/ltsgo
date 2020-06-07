@@ -60,7 +60,7 @@ en:
     alert: "Are you sure want to unsubscribe?"
     notice:
       subscribed: 'You have successfully subscribed to the event'
-      unsubscribed: 'You have successfully unsubscribed from the event'
+      unsubscribed: 'Unsubscribed successfully'
     user_subscribed: "user is already subscribed to the event"
     email_subscribed: "email is already subscribed to the event"
   form:

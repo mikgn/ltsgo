@@ -10,18 +10,20 @@
         ul.list-unstyled
         - @event.subscriptions.each do |sub|
           li.subscriber-block
+            span.user-img = image_tag(user_avatar(sub.user), class: 'img-icon')
             - if sub.user_id.nil?
-              = sub.user_name
+              span.user-link = sub.user_name
             - else
-              span.user-img = image_tag(user_avatar(sub), class: 'img-icon')
-              span.user-link = link_to sub.user_name, user_path(sub)
-
-              - if user_can_edit?(sub)
-                = link_to 'x', event_subscription_path(sub.event, sub),
-                        method: :delete,
-                        data: { confirm: t('subscriptions.alert') },
-                        class: 'btn btn-outline-danger unsub-btn'
+              span.user-link = link_to sub.user_name, user_path(sub.user)
 
               - if sub.user.events.any?
-                = link_to t('subscriptions.check_events'), user_path(sub),
-                        class: "button btn btn-outline-primary user-events-link"
+                = link_to t('subscriptions.check_events'), user_path(sub.user),
+                      class: "button btn btn-outline-primary user-events-link"
+
+            - if user_can_edit?(sub)
+              = link_to 'x', event_subscription_path(sub.event, sub),
+                      method: :delete,
+                      data: { confirm: t('subscriptions.alert') },
+                      class: 'btn btn-sm unsub-btn'
+
+
