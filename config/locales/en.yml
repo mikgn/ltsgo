@@ -49,6 +49,7 @@ en:
       destroyed:
     alert: "Are you sure want to delete your account"
   subscriptions:
+    subscribe: 'Subscribe'
     subscribers: 'Subscribers'
     check_events: "Check user events"
     subscribed:

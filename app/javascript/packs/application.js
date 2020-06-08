@@ -7,9 +7,9 @@ import "jquery"
 import "channels"
 import "flatpickr"
 import "sweetalert"
-import "turbolinks"
-require("@rails/activestorage").start();
 require("@rails/ujs").start();
+require("@rails/activestorage").start();
+require("turbolinks").start();
 
 
 $(function () {

@@ -49,6 +49,7 @@ ru:
       destroyed: 'Пользователь удален'
     alert: "Вы действительно хотите удалить аккаунт?"
   subscriptions:
+    subscribe: 'Подписаться'
     subscribers: 'Подписчики'
     check_events: "События пользователя"
     subscribed:
@@ -70,7 +71,7 @@ ru:
       few: '%{count} ошибки'
       many: '%{count} ошибок'
       other: '%{count} ошибок'
-    comment: "Новый Комментарий"
+    comment: "Комментарий"
     name: 'Имя'
     email: 'E-mail'
     datetime: 'Дата и Время'

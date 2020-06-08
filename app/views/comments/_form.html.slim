@@ -1,10 +1,9 @@
-= form_with(model: comment, local: true) do |form|
-  = render partial: 'partials/form_errors', local: { model: @comment }
+= form_with(model: [@event, comment], local: true) do |form|
+  = render partial: 'partials/form_errors', locals: { model: comment }
+  - if current_user.nil?
+    .form-group
+      = form.text_field :user_name, class: 'form-control', placeholder: t('form.name')
   .form-group
-    = form.label t('form.name')
-    = form.text_area :user_name, class: 'form-control'
-  .form-group
-    = form.label t('form.comment')
-    = form.text_area :body, class: 'form-control', rows: '4'
+    = form.text_area :body, class: 'form-control', rows: '3', placeholder: t('form.comment')
   .actions
-    = form.submit t('form.save'), class: 'btn btn-dark'
+    = form.submit t('form.save'), class: 'btn btn-dark btn-sm'

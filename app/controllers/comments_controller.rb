@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_event, only: [:edit, :destroy] # TODO :update
+  before_action :set_event, only: [:create, :destroy] # TODO :update edit
   before_action :set_comment, only: [:destroy] # TODO :update
 
   def create
@@ -47,6 +47,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(comment).permit(:body, :user_name)
+    params.require(:comment).permit(:body, :user_name)
   end
 end

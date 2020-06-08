@@ -1,4 +1,4 @@
-.container.full-screen-height.col-lg-12.mt-5
+.container.full-screen-height.col-lg-12.mt-4
   .event
     .row.event-info
       .col-md-6
@@ -12,15 +12,23 @@
               - if user_can_edit?(@event)
                 .button
                   = link_to t('events.editing_event'), edit_event_path(@event),
-                          class: 'btn btn-outline-light show-event-btn'
+                          class: 'btn btn-outline-light btn-sm edit-event-btn'
 
-        - if @event.subscribers.any?
+        - if @event.subscriptions.any?
+          = render partial: 'subscriptions/subscribers_modal'
           .subscribers-block
-            span #{t('subscriptions.subscribed', count: flash.count)}:
+            span #{t('subscriptions.subscribers', count: flash.count)}:
             button.btn.btn-primary.btn-sm.ml-1 data-toggle="modal" data-target="#exampleModalCenter"
-              span #{@event.subscribers.count}
+              span #{@event.subscriptions.count}
+
+        .subscriptions-form.mt-3
+          = render partial: 'subscriptions/form',
+                  locals: { subscription: @new_subscription || @event.subscriptions.build }
 
       .comments-block.col-md-6
-        = render partial: 'comments/comment', collection: @event.comments
-
-= render partial: 'subscriptions/subscribers_modal'
+        -if @event.comments.count.positive?
+          .comments-body
+            = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
+        .comments-form.mt-3
+          = render partial: 'comments/form',
+                    locals: { comment: @new_comment || @event.comments.build }

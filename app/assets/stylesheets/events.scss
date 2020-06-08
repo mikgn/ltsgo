@@ -55,8 +55,7 @@
   background-color: #fff;
 }
 
-.show-event-btn {
-  float: right;
+.edit-event-btn {
   padding: 5px 10px;
 }
 
@@ -70,7 +69,19 @@
 
 // comments
 
+@media (min-width: 450px)  {
+  .comments-block {
+    overflow-y: initial !important
+  }
+
+  .comments-body {
+    height: 340px;
+    overflow-y: auto;
+  }
+}
+
 .comments-block {
+  padding-bottom: 10px;
   background-color: #F6F7F9;
 }
 
@@ -121,30 +132,36 @@
 }
 
 .buttons {
+  flex: 1;
+  display: flex;
   a {
-    float: right;
+    align-self: flex-end;
+    margin-left: auto;
   }
 }
 
 // subscribers
 
 .subscribers-block {
+  display: flex;
+  align-items: baseline;
+
   span {
     color: #000 !important;
-    opacity: 0.6;
+    opacity: 0.9;
     font-weight: bold;
   }
 
   button {
     width: 30px;
     height: 30px;
-    border-radius: 70%;
-    font-weight: bold;
   }
 
   button span {
     opacity: 1;
     color: #fff !important;
+    font-size: 16px;
+    font-weight: bold;
   }
 
   margin: 10px 0;
@@ -161,17 +178,26 @@
 }
 
 .modal-body{
-  height: 400px;
+  height: 350px;
   overflow-y: auto;
+  opacity: 1 !important;
+
+  .user-name-title {
+    color: #000;
+  }
 }
 
-.modal-header {
+.modal-header, .modal-header .close-btn {
   border-bottom: none !important;
   text-align: center !important;
+  color: #000 !important;
+
+  .subscribers-title {
+    opacity: 0.8;
+  }
 
   p {
     font-size: 22px;
-    opacity: 0.8;
   }
 }
 

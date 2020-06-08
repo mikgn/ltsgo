@@ -75,24 +75,24 @@ end
 
 puts "Created 6 comments on Event(1), 3 of user_id:1 and 3 of user_id: 2"
 
-# Subscriptions
+#Subscriptions
 
-#
-#5.times do |i|
-#  Subscription.create!(
-#    user: User.find(i+1),
-#    event: Event.find(1)
-#  )
-#end
-#
-#puts "Created 5 Subscribers User class on Event(1)"
-#
-#2.times do |i|
-#  Subscription.create!(
-#    user_name: "Alex#{i+1}",
-#    user_email: "alex@test.com",
-#    event_id: 1
-#  )
-#end
-#
-#puts "Created 2 no registered Subscribers"
+
+5.times do |i|
+  Subscription.create!(
+    user_id: "#{i+1}",
+    event_id: 1
+  )
+end
+
+puts "Created 5 Subscribers User class on Event(1)"
+
+2.times do |i|
+  Subscription.create!(
+    user_name: "Alex#{i+1}",
+    user_email: "alex#{i+1}@test.com",
+    event_id: 1
+  )
+end
+
+puts "Created 2 no registered Subscribers"

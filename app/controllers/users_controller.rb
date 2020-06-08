@@ -11,8 +11,8 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to @user
       sweetalert_success t('users.notice.updated')
+      redirect_to @user
     else
       render :edit
     end

@@ -4,15 +4,15 @@
       .modal-header
         p.subscribers-title = t('subscriptions.subscribers')
         button.close type="button" data-dismiss="modal" aria-label="Close"
-          span aria-hidden="true" &times;
+          span.close-btn aria-hidden="true" &times;
 
       .modal-body
         ul.list-unstyled
-        - @event.subscriptions.each do |sub|
+        - @event.subscriptions.except(@new_subscription).each do |sub|
           li.subscriber-block
             span.user-img = image_tag(user_avatar(sub.user), class: 'img-icon')
             - if sub.user_id.nil?
-              span.user-link = sub.user_name
+              span.user-link.user-name-title = sub.user_name
             - else
               span.user-link = link_to sub.user_name, user_path(sub.user)
 
@@ -25,5 +25,3 @@
                       method: :delete,
                       data: { confirm: t('subscriptions.alert') },
                       class: 'btn btn-sm unsub-btn'
-
-
