@@ -40,14 +40,9 @@ class EventsController < ApplicationController
   end
 
   def destroy
-    if user_can_edit?(@event)
-      @event.destroy
-      redirect_to events_url
-      sweetalert_success t('events.notice.deleted')
-    else
-      redirect_to events_url
-      # TODO: error
-    end
+    @event.destroy
+    redirect_to events_url
+    sweetalert_success t('events.notice.deleted')
   end
 
   private
