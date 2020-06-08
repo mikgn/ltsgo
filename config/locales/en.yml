@@ -88,3 +88,4 @@ en:
     change_password: 'Change password'
     danger_zone: 'Danger zone'
     cancel_account: "Cancel my account"
+    characters_minimum: "characters minimum"

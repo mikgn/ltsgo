@@ -7,6 +7,6 @@
     .form-group
       = form.text_field :user_email, class: 'form-control', placeholder: t('form.email')
 
-  - unless user_subscribed?(@event)
+  - if user_can_subscribe?(@event)
     .actions
       = form.submit t('subscriptions.subscribe'), class: 'btn btn-dark btn-sm'

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :user_can_edit?
-  helper_method :user_subscribed?
+  helper_method :user_can_subscribe?
 
   def configure_permitted_parameters
     attrs = [:name, :email, :password, :password_confirmation, :remember_me]
@@ -15,7 +15,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def user_subscribed?(event)
-    event.subscribers.include?(current_user)
+  def user_can_subscribe?(event)
+    event.subscribers.exclude?(current_user) &&
+    event.user != current_user
   end
 end

@@ -6,7 +6,7 @@ class SubscriptionsController < ApplicationController
     @new_subscription = @event.subscriptions.build(subscription_params)
     @new_subscription.user = current_user
 
-    if @new_subscription.save
+    if not_self_event? && @new_subscription.save
       redirect_to @event
       sweetalert_success t('subscriptions.notice.subscribed')
     else
@@ -25,6 +25,10 @@ class SubscriptionsController < ApplicationController
   end
 
   private
+
+  def not_self_event?
+    @event.user != current_user
+  end
 
   def set_subscription
     @subscription = @event.subscriptions.find(params[:id])

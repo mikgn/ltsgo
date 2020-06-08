@@ -87,3 +87,4 @@ ru:
     change_password: 'Сменить пароль'
     danger_zone: 'Опасная зона'
     cancel_account: "Удалить аккаунт"
+    characters_minimum: "знаков минимум"
