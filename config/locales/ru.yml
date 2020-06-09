@@ -3,6 +3,7 @@ ru:
     models:
       user: 'Пользователь'
       event: 'Событие'
+      subscription: 'Событие'
     attributes:
       user:
         name: 'Имя'
@@ -15,6 +16,9 @@ ru:
         title: 'Заголовок'
         address: 'Место события'
         description: 'Описание'
+      subscription:
+        name: 'Имя'
+        email: 'E-mail'
   nav:
     sign_up: 'Регистрация'
     sign_up_submit: 'Создать Профиль'
@@ -66,6 +70,10 @@ ru:
     email_subscribed: "e-mail уже использован для подписки на событие"
   form:
     errors:
+      already_exists: ' уже зарегистрирован'
+      user:
+        name: 'Пользователь'
+        email: 'E-mail'
       self_event: 'Пользователь не может подписаться на свое событие'
       zero: 'нет ошибок'
       one: 'Ошибка'

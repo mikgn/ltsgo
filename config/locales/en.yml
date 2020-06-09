@@ -3,6 +3,7 @@ en:
     models:
       user: 'User'
       event: 'Event'
+      subscription: 'Subscription'
     attributes:
       user:
         name: 'Name'
@@ -15,6 +16,9 @@ en:
         title: 'Title'
         address: 'Location'
         description: 'Description'
+      subscription:
+        user_email: 'Email'
+        user_name: 'Username'
   nav:
     sign_up: 'Sign up'
     sign_up_submit: 'Submit'
@@ -65,14 +69,18 @@ en:
     user_subscribed: "user is already subscribed to the event"
     email_subscribed: "email is already subscribed to the event"
   form:
+    user_email: 'Email'
     errors:
+      already_exists: ' address is already taken'
+      user:
+        name: 'Name'
+        email: 'Email'
       self_event: 'User cannot subscribe to own event'
       zero: 'no errors'
       one: 'error'
       few: '%{count} errors'
       many: '%{count} errors'
       other: '%{count} errors'
-      form:
     comment: "New comment"
     name: 'Name'
     email: 'Email'

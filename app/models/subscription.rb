@@ -3,6 +3,7 @@ class Subscription < ApplicationRecord
   belongs_to :event
 
   before_validation :self_event?, on: :create
+  before_validation :email_exists?, on: :create, unless: -> { user.present? }
 
   validates :user_name, presence: true, unless: -> { user.present? }
   validates :user_email, presence: true,
@@ -21,6 +22,14 @@ class Subscription < ApplicationRecord
   end
 
   private
+
+  def email_exists?
+    user_with_registered_email = User.where(email: self.user_email)
+
+    if user_with_registered_email.exists?
+      errors.add(:email, I18n.t('form.errors.already_exists'))
+    end
+  end
 
   def self_event?
     if self.user_id == self.event.user_id
