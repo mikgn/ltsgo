@@ -14,7 +14,7 @@
                   = link_to t('events.editing_event'), edit_event_path(@event),
                           class: 'btn btn-outline-light btn-sm edit-event-btn'
 
-        - if @event.subscriptions.any?
+        - if @event.subscriptions.count.positive?
           = render partial: 'subscriptions/subscribers_modal'
           .subscribers-block
             span #{t('subscriptions.subscribers', count: flash.count)}:
