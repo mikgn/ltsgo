@@ -1,24 +1,37 @@
-# README
+## LTSGo
+LTSGo is your event managing app.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Create, take a look at other users events, subscribe and comment.
+<br>
 
-Things you may want to cover:
+### On Heroku
+-   App  [link](https://ltsgo-app.herokuapp.com//)
 
-* Ruby version
+### Requirements
 
-* System dependencies
+- Ruby 2.6.2
 
-* Configuration
+### Installation
+-   Cloning a repository
+```
+git clone git@github.com:mikgn/ltsgo.git
+```
 
-* Database creation
+###  Usage
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1.  Bundle
+```
+    bundle install
+```
+2.  Migrations
+```
+    rake db:create db:migrate
+```
+3.  Run rails server locally by
+```
+    rails server
+```
+4.  Open your browser on localhost
+```
+    localhost:3000
+```
