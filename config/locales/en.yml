@@ -66,6 +66,7 @@ en:
     email_subscribed: "email is already subscribed to the event"
   form:
     errors:
+      self_event: 'User cannot subscribe to own event'
       zero: 'no errors'
       one: 'error'
       few: '%{count} errors'
