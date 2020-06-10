@@ -75,7 +75,7 @@ en:
       user:
         name: 'Name'
         email: 'Email'
-      self_event: 'User cannot subscribe to own event'
+      self_event: ' cannot subscribe to own event'
       zero: 'no errors'
       one: 'error'
       few: '%{count} errors'
