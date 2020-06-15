@@ -6,10 +6,11 @@ import "bootstrap"
 import "jquery"
 import "channels"
 import "flatpickr"
-import "sweetalert"
 require("@rails/ujs").start();
-require("@rails/activestorage").start();
 require("turbolinks").start();
+require("@rails/activestorage").start();
+require("sweetalert").start();
+
 
 
 $(function () {

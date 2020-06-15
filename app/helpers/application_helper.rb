@@ -1,9 +1,7 @@
 module ApplicationHelper
   def user_avatar(user)
-    # TODO: avatar upload option
-    if user.present?
-      #user img
-      asset_path('sample_avatar.jpg')
+    if !user.nil? && user.avatar?
+      user.avatar.url
     else
       asset_path('sample_avatar.jpg')
     end

@@ -10,6 +10,7 @@ class EventsController < ApplicationController
   def show
     @new_comment = @event.comments.build(params[:comment])
     @new_subscription = @event.subscriptions.build(params[:subscription])
+    @new_image = @event.images.build(params[:image])
   end
 
   def new

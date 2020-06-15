@@ -5,7 +5,10 @@
         = image_tag(user_avatar(comment.user), class: 'img-icon')
       .name-datetime-comment-buttons
         .name
-          = link_to comment.user.name, user_path(comment.user)
+          - if comment.user
+            = link_to comment.user_name, user_path(comment.user)
+          - else
+            span.anonymous-name = comment.user_name
           span.datetime
             = l(comment.created_at, format: :short)
         .comment

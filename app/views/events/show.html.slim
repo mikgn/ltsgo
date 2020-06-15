@@ -1,25 +1,36 @@
-.container.full-screen-height.col-lg-12.mt-4
+.container.full-screen-height.col-lg-12.mt-2
   .event
     .row.event-info
       .col-md-6
         .event-background-show
-          .event-info-inner.row
-            .event-description
+          .event-block-on-show.row
+            .event-description.pb-3
+
+              - if @event.user
+                .image-username
+                  = image_tag user_avatar(@event.user)
+                  span = link_to @event.user.name, user_path(@event.user)
               h2 = @event.title
               h3 = l(@event.datetime, format: :short)
-              h3 = link_to @event.address, "https://yandex.ru/maps/?text=#{@event.address}"
+              h3 = link_to @event.address, "http://maps.google.com/?q=#{@event.address}"
               p = @event.description
+
+              - if @event.subscriptions.count.positive?
+                = render partial: 'subscriptions/subscribers_modal', locals: { subscriptions: @event.subscriptions }
+                button.btn.btn-outline-light.btn-sm.sub-show-btn data-toggle="modal" data-target="#exampleModalCenter1"
+                  span #{t('subscriptions.subscribers', count: flash.count)}: #{@event.subscriptions.count}
+
+
+              - if @event.images.count.positive?
+                = render partial: 'images/images_modal', locals: { images: @event.images.except(@new_image) }
+                button.btn.btn-outline-light.btn-sm.ml-2 data-toggle="modal" data-target="#exampleModalCenter2"
+                  span #{t('events.event_images')}: #{@event.images.count}
+
+
+
               - if user_can_edit?(@event)
-                .button
                   = link_to t('events.editing_event'), edit_event_path(@event),
                           class: 'btn btn-outline-light btn-sm edit-event-btn'
-
-        - if @event.subscriptions.count.positive?
-          = render partial: 'subscriptions/subscribers_modal'
-          .subscribers-block
-            span #{t('subscriptions.subscribers', count: flash.count)}:
-            button.btn.btn-primary.btn-sm.ml-1 data-toggle="modal" data-target="#exampleModalCenter"
-              span #{@event.subscriptions.count}
 
         .subscriptions-form.mt-3
           = render partial: 'subscriptions/form',
@@ -29,6 +40,11 @@
         -if @event.comments.count.positive?
           .comments-body
             = render partial: 'comments/comment', collection: @event.comments.except(@new_comment)
-        .comments-form.mt-3
+
+        .comments-form.mt-1
           = render partial: 'comments/form',
                     locals: { comment: @new_comment || @event.comments.build }
+
+        - if user_signed_in?
+          .images-form.mt-3
+            = render partial: 'images/form', locals: { image: @new_image || @event.images.build }

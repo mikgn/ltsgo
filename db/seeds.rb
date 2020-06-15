@@ -78,14 +78,13 @@ puts "Created 6 comments on Event(1), 3 of user_id:1 and 3 of user_id: 2"
 #Subscriptions
 
 
-5.times do |i|
-  Subscription.create!(
-    user_id: "#{i+1}",
-    event_id: 1
-  )
-end
+Subscription.create!(
+  user_id: 2,
+  event_id: 1
+)
 
-puts "Created 5 Subscribers User class on Event(1)"
+
+puts "Created a Subscriber user_id: 2, on Event(1)"
 
 2.times do |i|
   Subscription.create!(

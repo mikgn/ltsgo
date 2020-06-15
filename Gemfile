@@ -3,11 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
+#images
+gem 'carrierwave', '~> 2.0'
+gem 'rmagick'
 # notifications
 gem 'sweetify'
 # authentication
 gem 'devise'
-# inter for devise
+# internalization for devise
 gem 'devise-i18n'
 # Russian support
 gem 'rails-i18n', '~> 6.0.0'

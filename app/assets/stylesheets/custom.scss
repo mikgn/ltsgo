@@ -10,7 +10,7 @@
 
 .logo-text {
   font-weight: 800;
-  font-size: 34px;
+  font-size: 32px;
 }
 
 .create-event-btn {
@@ -20,6 +20,7 @@
 
 .create-event-btn a {
   font-weight: bold;
+  font-size: 18px;
 }
 
 .full-screen-height {
@@ -44,6 +45,10 @@
   .navbar-expand-lg {
     padding-bottom: 15px;
   }
+}
+
+.main-nav {
+  padding: 4px 15px !important;
 }
 
 /* Buffers */
@@ -105,7 +110,7 @@
 // footer
 
 footer {
-  padding: 5px 0;
+  padding: 8px 0;
   background-color: #000;
   bottom:0;
   width: 100%;
@@ -120,8 +125,8 @@ footer a {
 footer img {
   background-color: #000;
   border-radius: 5px;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background: radial-gradient(circle at center, white 60%, transparent 61%);
   overflow: hidden;
 }
@@ -164,4 +169,10 @@ footer img:hover {
   background-color: #D23538;
   color: #fff;
   border-radius: 3px;
+}
+
+// users#edit
+
+.img-field {
+  height: 100%;
 }

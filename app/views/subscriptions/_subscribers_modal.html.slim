@@ -1,4 +1,4 @@
-.modal.fade#exampleModalCenter tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+.modal.hide.fade id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
   .modal-dialog.modal-dialog-centered role="document"
     .modal-content
       .modal-header
@@ -8,20 +8,20 @@
 
       .modal-body
         ul.list-unstyled
-        - @event.subscriptions.except(@new_subscription).each do |sub|
-          li.subscriber-block
-            span.user-img = image_tag(user_avatar(sub.user), class: 'img-icon')
-            - if sub.user_id.nil?
-              span.user-link.user-name-title = sub.user_name
-            - else
-              span.user-link = link_to sub.user_name, user_path(sub.user)
+          - subscriptions.except(@new_subscription).each do |sub|
+            li.subscriber-block
+              span.user-img = image_tag(user_avatar(sub.user), class: 'img-icon')
+              - if sub.user_id.nil?
+                span.user-link.user-name-title = sub.user_name
+              - else
+                span.user-link = link_to sub.user_name, user_path(sub.user)
 
-              - if sub.user.events.any?
-                = link_to t('subscriptions.check_events'), user_path(sub.user),
-                      class: "button btn btn-outline-primary user-events-link"
+                - if sub.user.events.any?
+                  = link_to t('subscriptions.check_events'), user_path(sub.user),
+                        class: "button btn btn-primary btn-sm user-events-link"
 
-            - if user_can_edit?(sub)
-              = link_to 'x', event_subscription_path(sub.event, sub),
-                      method: :delete,
-                      data: { confirm: t('subscriptions.alert') },
-                      class: 'btn btn-sm unsub-btn'
+              - if user_can_edit?(sub)
+                = link_to 'x', event_subscription_path(sub.event, sub),
+                        method: :delete,
+                        data: { confirm: t('subscriptions.alert') },
+                        class: 'btn btn-sm unsub-btn'

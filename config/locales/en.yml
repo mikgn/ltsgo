@@ -4,6 +4,7 @@ en:
       user: 'User'
       event: 'Event'
       subscription: 'Subscription'
+      comment: 'Comment'
     attributes:
       user:
         name: 'Name'
@@ -19,6 +20,10 @@ en:
       subscription:
         user_email: 'Email'
         user_name: 'Username'
+      comment:
+        user: 'User'
+        body: 'Comment'
+        user_name: 'Name'
   nav:
     sign_up: 'Sign up'
     sign_up_submit: 'Submit'
@@ -26,6 +31,7 @@ en:
     log_out: 'Log out'
     profile: 'Profile'
   events:
+    event_images: 'Event images'
     editind_event: 'Editing Event'
     new_event: 'New Event'
     create_event: 'Create Event'
@@ -35,6 +41,9 @@ en:
       created: 'Event was successfully created'
       updated: 'Event was successfully updated'
       deleted: 'Event was successfully deleted'
+      image_added: 'Image was successfully saved'
+      image_not_added: 'Error'
+      image_deleted: 'Image was successfully deleted'
     alert: "Are you sure want to delete this event?"
   comments:
     alert:
@@ -51,7 +60,7 @@ en:
       signed_up: 'Signed up successfully!'
       updated: 'The changes have been saved'
       destroyed:
-    alert: "Are you sure want to delete your account"
+    alert: 'Are you sure want to delete your account'
   subscriptions:
     subscribe: 'Subscribe'
     subscribers: 'Subscribers'
@@ -59,15 +68,15 @@ en:
     subscribed:
       zero: 'Subscribers'
       one: 'Subscriber'
-      few: '%{count} Subscribers'
-      many: '%{count} Subscribers'
-      other: '%{count} Subscribers'
-    alert: "Are you sure want to unsubscribe?"
+      few: "%{count} Subscribers"
+      many: "%{count} Subscribers"
+      other: "%{count} Subscribers"
+    alert: 'Are you sure want to unsubscribe?'
     notice:
       subscribed: 'You have successfully subscribed to the event'
       unsubscribed: 'Unsubscribed successfully'
-    user_subscribed: "user is already subscribed to the event"
-    email_subscribed: "email is already subscribed to the event"
+    user_subscribed: 'user is already subscribed to the event'
+    email_subscribed: 'email is already subscribed to the event'
   form:
     user_email: 'Email'
     errors:
@@ -96,5 +105,7 @@ en:
     back: 'Back'
     change_password: 'Change password'
     danger_zone: 'Danger zone'
-    cancel_account: "Cancel my account"
-    characters_minimum: "characters minimum"
+    cancel_account: 'Cancel my account'
+    characters_minimum: 'characters minimum'
+    avatar: 'Profile picture'
+    add_image: 'Add image from event'

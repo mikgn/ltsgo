@@ -1,0 +1,7 @@
+= form_with(model: [@event, image], multipart: true) do |form|
+  = render partial: 'partials/form_errors', locals: { model: image }
+  .file_field
+    = form.label t('form.add_image'), class: 'add-img-label'
+    = form.file_field :image, class: 'form-control img-field'
+  .actions.mt-2
+    = form.submit t('form.save'), class: 'btn btn-dark btn-sm'

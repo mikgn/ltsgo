@@ -1,9 +1,13 @@
 ru:
+  user: 'Пользователь'
+  subscription: 'Подписка'
+  event: 'Событие'
   activerecord:
     models:
       user: 'Пользователь'
       event: 'Событие'
       subscription: 'Событие'
+      comment: 'Комментарий'
     attributes:
       user:
         name: 'Имя'
@@ -19,6 +23,10 @@ ru:
       subscription:
         name: 'Имя'
         email: 'E-mail'
+      comment:
+        user: 'Пользователь'
+        body: 'Комментарий'
+        user_name: 'Имя'
   nav:
     sign_up: 'Регистрация'
     sign_up_submit: 'Создать Профиль'
@@ -26,6 +34,7 @@ ru:
     log_out: 'Выйти'
     profile: 'Профиль'
   events:
+    event_images: 'Фото с мероприятия'
     editing_event: 'Изменить Событие'
     new_event: 'Новое Событие'
     create_event: 'Создать Событие'
@@ -35,6 +44,9 @@ ru:
       created: 'Событие создано'
       updated: 'Изменения успешно сохранены'
       deleted: 'Событие удалено'
+      image_added: 'Изображение добавлено'
+      image_not_added: 'Что-то пошло не так'
+      image_deleted: 'Изображение удалено'
     alert: "Вы действительно хотите удалить это событие?"
   comments:
     alert:
@@ -97,3 +109,5 @@ ru:
     danger_zone: 'Опасная зона'
     cancel_account: "Удалить аккаунт"
     characters_minimum: "знаков минимум"
+    avatar: 'Фото профиля'
+    add_image: 'Добавить фото с мероприятия'

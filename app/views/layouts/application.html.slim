@@ -11,14 +11,14 @@ html
     = favicon_link_tag 'favicon.png', rel: 'shortcut icon'
     link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet"
   body
-    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.list-unstyled
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.list-unstyled.main-nav
       = link_to 'LTSGo', root_path, class: "navbar-brand logo-text"
       button.navbar-toggler type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
         span.navbar-toggler-icon
       .collapse.navbar-collapse#navbarNav
         - if current_user
           .create-event-btn
-            = link_to t('events.create_event'), new_event_path, class: 'btn btn-lg btn-primary'
+            = link_to t('events.create_event'), new_event_path, class: 'btn btn-primary'
         .session-btns
         - if user_signed_in?
           = link_to t('nav.profile'), current_user, class: "btn btn-outline-light"
@@ -32,7 +32,7 @@ html
           = yield
 
     footer.page-footer.mt-5
-      .text-center.py-3
+      .text-center.py-2
         = mail_to 'kogan.miha@gmail.com'
           = image_tag 'mail.jpeg'
         = link_to 'https://github.com/mikgn'

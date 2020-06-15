@@ -2,13 +2,11 @@ class Comment < ApplicationRecord
   default_scope { order(:created_at) }
 
   belongs_to :event
-  belongs_to :user
+  belongs_to :user, optional: true
 
   validates :event, presence: true
   validates :body, presence: true
-  validates :user_name, presence: true, if: -> { user.present? }
-
-  private
+  validates :user_name, presence: true, unless: -> { user.present? }
 
   def user_name
     user.present? ? user.name : super

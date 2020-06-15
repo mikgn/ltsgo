@@ -5,5 +5,5 @@
       = form.text_field :user_name, class: 'form-control', placeholder: t('form.name')
   .form-group
     = form.text_area :body, class: 'form-control', rows: '3', placeholder: t('form.comment')
-  .actions
+  .actions.comment-save-btn
     = form.submit t('form.save'), class: 'btn btn-dark btn-sm'

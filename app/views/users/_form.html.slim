@@ -1,5 +1,10 @@
 = form_with(model: user, multipart: true) do |form|
   = render partial: 'partials/form_errors', locals: { model: @user }
+  .file_field
+    = form.label t('form.avatar')
+    - if @user.avatar?
+      = image_tag @user.avatar.thumb.url
+    = form.file_field :avatar, class: 'form-control img-field'
   .form-group
     = form.label t('form.name')
     = form.text_field :name, class: 'form-control'
@@ -11,3 +16,4 @@
       = link_to t('form.back'), user_path, class: "btn btn-outline-dark ml-2"
     - if controller_name == 'users'
       = link_to t('form.change_password'), edit_user_registration_path, class: 'btn btn-outline-danger ml-2'
+

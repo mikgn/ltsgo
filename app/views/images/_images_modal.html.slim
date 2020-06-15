@@ -1,0 +1,18 @@
+.modal.hide.fade id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+  .modal-dialog.modal-dialog-centered role="document"
+    .modal-content
+      .modal-header
+        p.subscribers-title = t('events.event_images')
+        button.close type="button" data-dismiss="modal" aria-label="Close"
+          span.close-btn aria-hidden="true" &times;
+
+      .modal-body.event-user-images-modal
+        - images.each do |img|
+          .img-user-link
+            .img
+              = link_to img.image.url
+                = image_tag(img.image.thumb.url)
+            .user-link
+              = link_to img.user.name, user_path(img.user)
+            .image-date
+              = l(img.created_at, format: :short)

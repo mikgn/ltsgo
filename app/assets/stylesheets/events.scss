@@ -5,6 +5,10 @@
   margin-bottom: 20px;
 }
 
+.event-block-size {
+  height: 180px !important;
+}
+
 .event-background {
   width: 100%;
   z-index: -1;
@@ -42,7 +46,11 @@
 }
 
 .event-info-inner {
-  padding: 20px;
+  padding: 15px 20px 0 20px;
+}
+
+.event-block-on-show {
+  padding: 20px 20px 0 20px;
 }
 
 .event-map {
@@ -57,6 +65,7 @@
 
 .edit-event-btn {
   padding: 5px 10px;
+  margin-left: 10px;
 }
 
 .no-events {
@@ -66,7 +75,6 @@
   border-radius: 5px;
 }
 
-
 // comments
 
 @media (min-width: 450px)  {
@@ -75,7 +83,7 @@
   }
 
   .comments-body {
-    height: 340px;
+    height: 330px;
     overflow-y: auto;
   }
 }
@@ -90,6 +98,14 @@
   margin: 10px 0;
   border-radius: 3px;
   background-color: #fff;
+}
+
+.anonymous-name {
+  color: #305BB7;
+}
+
+.comment-save-btn {
+  margin-top: -8px;
 }
 
 .user-block {
@@ -141,6 +157,14 @@
 }
 
 // subscribers
+
+.sub-index-btn {
+  background-color: #323B69;
+}
+
+.images-index-btn {
+  margin-left: 10px;
+}
 
 .subscribers-block {
   display: flex;
@@ -217,18 +241,61 @@
 .unsub-btn {
   margin-left: auto;
   font-weight: bold;
-  color: #DC3545;
+  color: #DC3545 !important;
 }
 
 .unsub-btn:hover {
   background-color: #DC3545;
-  color: #fff;
+  color: #fff !important;
 }
 
 .user-events-link {
   margin-left: auto;
+  color: #fff !important;
 
   @media (max-width: 450px)  {
     display: none;
   }
+}
+
+// modal images
+
+.event-user-images-modal {
+
+  .img-user-link {
+    align-items: baseline;
+    display: flex;
+    padding: 7px;
+
+
+    .image-date {
+      font-size: 14px;
+      margin-left: 20px;
+      color: #778898;
+    }
+  }
+}
+
+.user-link {
+  a {
+    color: #305BB5;
+  }
+}
+
+
+//events#show
+
+.image-username {
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+
+  span {
+    margin-left: 20px;
+    font-size: 20px;
+  }
+}
+
+.add-img-label {
+  color: #000;
 }
