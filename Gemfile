@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.2'
 
+# aws
+gem 'fog-aws'
 #images
 gem 'carrierwave', '~> 2.0'
 gem 'rmagick'
