@@ -253,7 +253,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bootsnap (>= 1.4.2)
+  bootsnap
   byebug
   carrierwave (~> 2.0)
   devise
