@@ -22,9 +22,7 @@ class Subscription < ApplicationRecord
   end
 
   def email_exists?
-    user_with_registered_email = User.exists?(email: user_email)
-
-    if user_with_registered_email
+    if User.exists?(email: user_email)
       errors.add(:email, I18n.t('form.errors.already_exists'))
     end
   end
