@@ -1,0 +1,11 @@
+<h1><%= t('event_mailer.new_subscription') %></h1>
+<p><%= t('event_mailer.name') %>: <strong><%= @name %></strong></p>
+<p><%= t('event_mailer.email') %>: <strong><%= link_to @email, "mailto:#{@email}" %></strong></p>
+
+<hr/>
+
+<%= t('event_mailer.event') %> : <b><%= @event.title %></b>
+<br>
+<%= t('event_mailer.datetime') %> : <b><%= l @event.datetime %></b>
+<br>
+<%= t('event_mailer.owner') %> : <b><%= @event.user.name %></b>

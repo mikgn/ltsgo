@@ -109,3 +109,18 @@ en:
     characters_minimum: 'characters minimum'
     avatar: 'Profile picture'
     add_image: 'Add image from event'
+  event_mailer:
+    new_subscription: 'New subscription'
+    author: 'Author'
+    title: 'Title'
+    name: 'New subscriber'
+    email: 'Email'
+    event: 'Event'
+    datetime: 'Date and time'
+    owner: 'Owner'
+    subscription:
+      subject: "New subscriber to"
+    comment:
+      subject: "New comment to"
+      title: "New comment"
+      author: "Author"

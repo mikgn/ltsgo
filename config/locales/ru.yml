@@ -111,3 +111,17 @@ ru:
     characters_minimum: "знаков минимум"
     avatar: 'Фото профиля'
     add_image: 'Добавить фото с мероприятия'
+  event_mailer:
+    new_subscription: 'Новый подписчик'
+    author: 'Автор'
+    name: 'Имя'
+    email: 'Почта'
+    event: 'Событие'
+    datetime: 'Дата и время'
+    owner: 'Организатор'
+    subscription:
+      subject: "Новый подписчик на"
+    comment:
+      subject: "Новый комментарий к"
+      title: "Новый комментарий"
+      author: "Автор"

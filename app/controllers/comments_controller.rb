@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
     @new_comment.user = current_user
 
     if @new_comment.save
+      notify_subscribers(@event, @new_comment)
       redirect_to @event
       sweetalert_success t('comments.notice.created')
     else
@@ -37,6 +38,14 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def notify_subscribers(event, comment)
+    event_emails = event.subscriptions.pluck(:user_email) + [event.user.email]
+
+    event_emails.each do |email|
+      EventMailer.comment(event, comment, email).deliver_now
+    end
+  end
 
   def set_event
     @event = Event.find(params[:event_id])

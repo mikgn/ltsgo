@@ -1,0 +1,11 @@
+<h1><%= t 'event_mailer.comment.title' %></h1>
+<p><%= @comment.body %></p>
+<p><%= t 'event_mailer.comment.author' %>: <strong><%= @comment.user_name %></strong></p>
+
+<hr/>
+
+<%= t('event_mailer.event') %> : <b><%= @event.title %></b>
+<br>
+<%= t('event_mailer.datetime') %> : <b><%= l @event.datetime %></b>
+<br>
+<%= t('event_mailer.owner') %> : <b><%= @event.user.name %></b>
