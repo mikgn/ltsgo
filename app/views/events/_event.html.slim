@@ -7,12 +7,12 @@
             h3 = link_to event.title, event_path(event)
             h3 = l(event.datetime, format: :short)
             .mb-2 = event.address
-            - if event.subscriptions.count.positive?
-              = render partial: 'subscriptions/subscribers_modal', locals: { subscriptions: event.subscriptions }
-              button.btn.btn-outline-light.btn-sm.sub-index-btn data-toggle="modal" data-target="#exampleModalCenter1"
+            - if event.subscriptions.any?
+              = render partial: 'subscriptions/subscribers_modal', locals: { subscriptions: event.subscriptions, event_id: event.id }
+              button.btn.btn-outline-light.btn-sm.sub-index-btn data-toggle="modal" data-target="#subscribersList-#{event.id}"
                 span #{t('subscriptions.subscribers', count: flash.count)}: #{event.subscriptions.count}
 
-            - if event.comments.count.positive?
-                = render partial: 'images/images_modal', locals: { images: event.images }
-                button.btn.btn-outline-light.btn-sm.images-index-btn data-toggle="modal" data-target="#exampleModalCenter2"
+            - if event.images.any?
+                = render partial: 'images/images_modal', locals: { images: event.images, event_id: event.id  }
+                button.btn.btn-outline-light.btn-sm.images-index-btn data-toggle="modal" data-target="#imagesList-#{event.id.to_s}"
                   span #{t('events.event_images')}: #{event.images.count}

@@ -16,14 +16,18 @@
               p = @event.description
 
               - if @event.subscriptions.count.positive?
-                = render partial: 'subscriptions/subscribers_modal', locals: { subscriptions: @event.subscriptions }
-                button.btn.btn-outline-light.btn-sm.sub-show-btn data-toggle="modal" data-target="#exampleModalCenter1"
+                = render partial: 'subscriptions/subscribers_modal',
+                    locals: { subscriptions: @event.subscriptions, event_id: @event.id }
+
+                button.btn.btn-outline-light.btn-sm.sub-show-btn data-toggle="modal" data-target="#subscribersList-#{@event.id}"
                   span #{t('subscriptions.subscribers', count: flash.count)}: #{@event.subscriptions.count}
 
 
               - if @event.images.count.positive?
-                = render partial: 'images/images_modal', locals: { images: @event.images.except(@new_image) }
-                button.btn.btn-outline-light.btn-sm.ml-2 data-toggle="modal" data-target="#exampleModalCenter2"
+                = render partial: 'images/images_modal',
+                    locals: { images: @event.images.except(@new_image), event_id: @event.id }
+
+                button.btn.btn-outline-light.btn-sm.ml-2 data-toggle="modal" data-target="#imagesList-#{@event.id}"
                   span #{t('events.event_images')}: #{@event.images.count}
 
 
