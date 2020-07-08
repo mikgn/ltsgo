@@ -1,0 +1,10 @@
+<h1><%= @event.user.name.capitalize %> <%= t('event_mailer.image.subject') %>:</h1>
+
+
+<%= t('event_mailer.event') %> : <b><%= @event.title %></b>
+<br>
+<%= t('event_mailer.datetime') %> : <b><%= l @event.datetime %></b>
+<br>
+<%= t('event_mailer.owner') %> : <b><%= @event.user.name %></b>
+
+<%= link_to image_tag(@image.image.thumb.url), @image.image.url, class: "float-left" %>

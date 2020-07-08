@@ -124,3 +124,5 @@ en:
       subject: "New comment to"
       title: "New comment"
       author: "Author"
+    image:
+      subject: "uploaded a new picture to"

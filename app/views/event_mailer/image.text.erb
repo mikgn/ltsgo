@@ -1,0 +1,10 @@
+<%= @image.user.name.capitalize %> добавил новое фото в
+----
+
+<%= link_to image_tag(@image.image.thumb.url), @image.image.url, class: "float-left" %>
+
+----------------------
+
+Событие: <%= @event.title %>
+Состоится: <%= l @event.datetime %>
+Организатор: <%= @event.user.name %>

@@ -7,6 +7,7 @@ class ImagesController < ApplicationController
     @new_image.user = current_user
 
     if @new_image.save
+      notify_subscribers(@new_image.event, @new_image)
       redirect_to @event
       sweetalert_success t('events.notice.image_added')
     else
@@ -24,6 +25,14 @@ class ImagesController < ApplicationController
   end
 
   private
+
+  def notify_subscribers(event, image)
+    event_emails = event.subscriptions.pluck(:user_email) - [@new_image.user.email] + [event.user.email]
+
+    event_emails.each do |email|
+      EventMailer.image(event, image, email).deliver_now
+    end
+  end
 
   def set_event
     @event = Event.find(params[:event_id])
