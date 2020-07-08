@@ -2,7 +2,10 @@
   .form-border.mt-4
     h2.mb-4 = t('nav.log_in')
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      = render "devise/shared/session_errors"
+      - flash.each do |_, value|
+        #error_explanation
+          ul
+            li.flash.alert-text-color = value
       .form-group
         = f.label t('form.email')
         = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
