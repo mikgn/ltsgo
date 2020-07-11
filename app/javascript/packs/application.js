@@ -4,29 +4,32 @@
 // that code so it'll be compiled.
 import "bootstrap"
 import "jquery"
-import "channels"
 import "flatpickr"
+import "channels"
+
 require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
+
+$(document).on('turbolinks:load', function() {
+    $(document).ready(function(){
+        flatpickr('#flatpickr', {
+            enableTime: true,
+            minDate: "today",
+            dateFormat: "j/n/Y H:i",
+            allowInput: false,
+            appearence: 'top'
+        });
+    });
+})
+
 require("sweetalert").start();
-
-
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 });
 
 
-$(document).ready(function(){
-    flatpickr('#flatpickr', {
-        enableTime: true,
-        minDate: "today",
-        dateFormat: "j/n/Y H:i",
-        allowInput: false,
-        appearence: 'top'
-    });
-});
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
