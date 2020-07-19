@@ -9,3 +9,5 @@
 <%= t 'event_mailer.event' %>: <%= @event.title %>
 <%= t 'event_mailer.datetime' %>: <%= l @event.datetime %>
 <%= t 'event_mailer.owner' %>: <%= @event.user.name %>
+
+<%= link_to "Посмотреть событие", @event %>

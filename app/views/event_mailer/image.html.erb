@@ -8,3 +8,5 @@
 <%= t('event_mailer.owner') %> : <b><%= @event.user.name %></b>
 
 <%= link_to image_tag(@image.image.thumb.url), @image.image.url, class: "float-left" %>
+<br>
+<%= link_to "Посмотреть событие", @event %>
