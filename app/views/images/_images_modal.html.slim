@@ -8,10 +8,10 @@
 
       .modal-body.event-user-images-modal
         - images.each do |img|
+          / - if img && img.image.url
           .img-user-link
             .img
-              = link_to img.image.url
-                = image_tag(img.image.thumb.url)
+              = link_to image_tag(img.image.thumb.url), img.image.url
             .user-link
               = link_to img.user.name, user_path(img.user)
             .image-date
