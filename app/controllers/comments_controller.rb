@@ -40,8 +40,9 @@ class CommentsController < ApplicationController
   private
 
   def notify_subscribers(event, comment)
-    event_emails = event.subscriptions.pluck(:user_email) + [event.user.email]
+    event_emails = event.subscriptions.pluck(:user_email)
     event_emails -= [@new_comment.user.email] if @new_comment.user
+    event_emails += [event.user.email]
 
     event_emails.each do |email|
       EventMailer.comment(event, comment, email).deliver_now
