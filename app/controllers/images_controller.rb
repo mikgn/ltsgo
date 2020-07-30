@@ -11,7 +11,6 @@ class ImagesController < ApplicationController
       redirect_to @event
       sweetalert_success t('events.notice.image_added')
     else
-      sweetalert_error t('events.notice.image_not_added')
       render 'events/show'
     end
   end
